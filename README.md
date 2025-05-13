@@ -156,6 +156,29 @@ Windsurf connects via its plugin system:
    /mcp create-task
    ```
 
+### Setting Up GitHub MCP Tool
+
+GitHub MCP tool can be configured by adding to your .mcp.json configuration file:
+
+1. Create or edit your .mcp.json file in your project root:
+   ```bash
+   touch .mcp.json
+   ```
+
+2. Add the following configuration:
+   ```json
+   {
+     "ai-collaboration-server": {
+       "command": "npx",
+       "args": ["-y", "ai-collaboration-mcp-server start"]
+     }
+   }
+   ```
+
+3. This configuration will allow GitHub MCP tools to automatically start and connect to your AI Collaboration MCP server
+
+4. Access GitHub MCP functionality through your GitHub workflow
+
 For more detailed setup instructions and troubleshooting, see our [AI Tool Integration Guide](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/ai-tool-integration.md).
 
 ## 💰 Pricing
