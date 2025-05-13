@@ -4,7 +4,7 @@ This guide covers the license management system for the AI Collaboration MCP Ser
 
 ## License System Overview
 
-The MCP Server uses a flexible licensing system with options for subscription-based and one-time purchases. Licenses are securely stored in Supabase with encryption and verified on a regular basis.
+The MCP Server uses a flexible licensing system with options for subscription-based and one-time purchases. Licenses are securely stored and verified using JWT tokens for maximum security.
 
 ### License Types
 
@@ -63,7 +63,7 @@ window.location.href = response.data.data.url;
 
 ## Verifying a License
 
-After purchasing a license, you'll need to verify and activate it:
+After purchasing a license, you'll need to set it up:
 
 ### Using NPX Command
 
@@ -111,24 +111,16 @@ Users with subscription-based licenses can manage their subscriptions through th
 ### Using NPX Command
 
 ```bash
-npx ai-collaboration-mcp-server account
+npx ai-collaboration-mcp-server status
 ```
 
-This will open the Stripe Customer Portal in your browser, where you can:
-- Update payment methods
-- Change subscription plans
-- Cancel subscriptions
-- View billing history
+This will display your license information and provide options to manage your subscription if applicable.
 
 ### Using the API
 
 ```javascript
 const response = await axios.post('http://your-server-url/license/portal', {
-  stripeCustomerId: 'cus_123456789'
-}, {
-  headers: {
-    'x-license-key': 'XXXX-XXXX-XXXX-XXXX'
-  }
+  licenseKey: 'XXXX-XXXX-XXXX-XXXX'
 });
 
 // Redirect to the portal URL
@@ -159,7 +151,7 @@ Subscriptions are automatically renewed at the end of each period. If a renewal 
 Our license system uses several security measures:
 
 1. **JWT Tokens**: Licenses are represented as JWT tokens for secure verification
-2. **Secure Storage**: License data is stored in Supabase with proper encryption
+2. **Secure Storage**: License data is stored securely with proper encryption
 3. **Regular Verification**: Licenses are verified on server start and periodically during operation
 4. **Expiration**: JWT tokens have built-in expiration to prevent unauthorized use
 
@@ -174,13 +166,13 @@ If your license is reported as invalid, check:
 
 ### License Key Recovery
 
-If you've lost your license key:
-1. Run the recovery command:
-   ```bash
-   npx ai-collaboration-mcp-server recover-license
-   ```
-2. Enter the email address used for purchase
-3. A recovery link will be sent to your email
+If you've lost your license key, use the email associated with your purchase to recover it:
+
+```bash
+npx ai-collaboration-mcp-server recover-license
+```
+
+Enter the email address used for purchase, and a recovery link will be sent to your email.
 
 ## Enterprise Licensing
 
