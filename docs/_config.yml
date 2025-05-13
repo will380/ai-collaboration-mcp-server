@@ -1,0 +1,9 @@
+theme: jekyll-theme-cayman
+title: AI Collaboration MCP Server
+description: Model Context Protocol (MCP) server for AI collaboration between Claude Code, Cursor, and Windsurf
+show_downloads: true
+github:
+  is_project_page: true
+  repository_url: https://github.com/will380/ai-collaboration-mcp-server
+  owner_url: https://github.com/will380
+  owner_name: will380
