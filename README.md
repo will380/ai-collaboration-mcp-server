@@ -117,6 +117,7 @@ We offer flexible pricing options to suit teams of all sizes:
 Comprehensive documentation is available for all aspects of the MCP server:
 
 - [Installation Guide](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/installation.md)
+- [AI Tool Integration Guide](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/ai-tool-integration.md) - **New!** Setup instructions for Claude Code, Cursor, and Windsurf
 - [API Reference](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/api-reference.md)
 - [License Management](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/license-management.md)
 
@@ -153,6 +154,8 @@ await client.invoke('send-message', {
   taskId: result.data.task.id
 });
 ```
+
+For specific setup instructions for each AI tool (Claude Code, Cursor, Windsurf), see our [AI Tool Integration Guide](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/ai-tool-integration.md).
 
 ## 👨‍💻 Support
 
