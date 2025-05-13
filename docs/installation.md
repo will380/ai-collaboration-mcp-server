@@ -4,111 +4,128 @@ This guide walks you through the process of installing and setting up the AI Col
 
 ## Prerequisites
 
-- Node.js 16.x or later
+- Node.js 18.x or later
 - npm 8.x or later
-- A Stripe account (for payment processing)
-- A Supabase account (for database)
 
 ## Quick Installation with NPX
 
 The quickest way to get started is using our npx command:
 
 ```bash
-# Install and run in trial mode
+# Install the package globally
+npm install -g ai-collaboration-mcp-server
+
+# Or use it directly with npx
+npx ai-collaboration-mcp-server
+```
+
+## Commands Overview
+
+The MCP client provides several commands:
+
+```bash
+# Setup your server configuration
+npx ai-collaboration-mcp-server setup
+
+# Purchase a license
+npx ai-collaboration-mcp-server buy
+
+# Check your license status
+npx ai-collaboration-mcp-server status
+
+# Start the MCP server
+npx ai-collaboration-mcp-server start
+
+# Install dependencies
 npx ai-collaboration-mcp-server install
 ```
 
-This will walk you through the installation process interactively, asking for:
+## Setup Process
 
-- Installation directory
-- Port number for the server
-- Environment variables
-
-## Manual Installation
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/your-private-repo.git
-cd your-private-repo
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Configure Environment Variables
-
-Create a `.env` file in the root directory with the following variables:
-
-```
-# Supabase configuration
-SUPABASE_URL=https://your-project-id.supabase.co
-SUPABASE_KEY=your-supabase-key
-
-# JWT configuration
-JWT_SECRET=your-jwt-secret
-
-# Stripe configuration
-STRIPE_SECRET_KEY=your-stripe-secret-key
-STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
-STRIPE_MONTHLY_PRICE_ID=price_monthly
-STRIPE_ANNUAL_PRICE_ID=price_annual
-STRIPE_LIFETIME_PRICE_ID=price_lifetime
-
-# Server configuration
-SERVER_URL=http://localhost:3000
-PORT=3000
-REQUIRE_LICENSE=false
-```
-
-### 4. Start the Server
-
-```bash
-npm start
-```
-
-The server will start on the specified port (default: 3000).
-
-## License Setup
-
-To use all features of the MCP server, you need to purchase a license:
-
-1. Run the buy command:
-
-```bash
-npx ai-collaboration-mcp-server buy
-```
-
-2. Choose your license plan
-3. Complete the payment process
-4. Set up your license key:
+1. Run the setup command:
 
 ```bash
 npx ai-collaboration-mcp-server setup
 ```
 
-5. When prompted, enter your license key
+2. Follow the prompts to configure:
+   - Server port (default: 3000)
+   - Server host (default: localhost)
+   - HTTP/HTTPS preference
+   - License key (if available)
 
-## Docker Installation
+This will create a `.env` file with your configuration.
 
-We also provide a Docker image for easy deployment:
+## License Purchase
+
+To buy a license:
 
 ```bash
-docker pull mcp-server/ai-collaboration:latest
-
-docker run -p 3000:3000 \
-  -e SUPABASE_URL=your-supabase-url \
-  -e SUPABASE_KEY=your-supabase-key \
-  -e JWT_SECRET=your-jwt-secret \
-  -e STRIPE_SECRET_KEY=your-stripe-secret-key \
-  -e STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret \
-  -e SERVER_URL=http://localhost:3000 \
-  -e REQUIRE_LICENSE=false \
-  mcp-server/ai-collaboration:latest
+npx ai-collaboration-mcp-server buy
 ```
+
+This will:
+1. Display available plans
+2. Let you select a plan
+3. Open a secure Stripe checkout page in your browser
+4. Email you a license key upon successful payment
+
+## Starting the Server
+
+After setup, start your server:
+
+```bash
+npx ai-collaboration-mcp-server start
+```
+
+Or with custom options:
+
+```bash
+npx ai-collaboration-mcp-server start --port 8080 --host 0.0.0.0 --http
+```
+
+## Manual Installation
+
+If you prefer to manually install:
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+git clone https://github.com/will380/ai-collaboration-mcp-server.git
+cd ai-collaboration-mcp-server
+npm install
+```
+
+3. Set up your environment by creating a `.env` file:
+
+```
+# Server configuration
+PORT=3000
+HOST=localhost
+USE_HTTP=true
+LICENSE_KEY=your-license-key-if-available
+```
+
+4. Start the server:
+
+```bash
+npm start
+```
+
+## Checking License Status
+
+To check your license status:
+
+```bash
+npx ai-collaboration-mcp-server status
+```
+
+This will display:
+- License validity
+- Plan type
+- Customer information
+- Expiration date
 
 ## Next Steps
 
