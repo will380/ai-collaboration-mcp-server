@@ -58,41 +58,99 @@ npx ai-collaboration-mcp-server start
 
 ## 🔧 AI Tool Setup
 
-### Claude Code Setup
+### Setting Up Claude Code
 
-```bash
-# In Claude Code terminal
-/mcp config
-/mcp add-server
-# Enter server URL and license key when prompted
-/mcp connect "AI Collaboration MCP Server"
-```
+Claude Code comes with built-in MCP support that makes integration straightforward:
 
-### Cursor Setup
+1. Open Claude Code in your terminal:
+   ```bash
+   claude-code
+   ```
 
-Open Cursor Settings > Extensions and add a new MCP connection with:
-- URL: http://localhost:3000/mcp
-- Headers: `{"x-license-key": "your-license-key"}`
+2. Configure MCP connection:
+   ```bash
+   /mcp config
+   /mcp add-server
+   ```
 
-### Windsurf Setup
+3. When prompted, enter:
+   - Server name: "AI Collaboration MCP Server"
+   - Server URL: http://localhost:3000/mcp (or your custom URL)
+   - License key: Your license key
+   - Role: backend_dev (or your preferred role)
 
-Create `~/.windsurf/plugins/mcp-collaboration.json` with:
-```json
-{
-  "name": "AI Collaboration MCP Server",
-  "type": "mcp",
-  "enabled": true,
-  "config": {
-    "url": "http://localhost:3000/mcp",
-    "headers": {
-      "x-license-key": "your-license-key"
-    },
-    "defaultRole": "architect"
-  }
-}
-```
+4. Connect to the server:
+   ```bash
+   /mcp connect "AI Collaboration MCP Server"
+   ```
 
-For full setup details, see our [AI Tool Integration Guide](ai-tool-integration.md).
+5. Use MCP tools:
+   ```bash
+   /mcp list-tools
+   /mcp invoke create-task --title "Implement API" --description "Create REST API endpoint" --type "backend" --priority "high"
+   ```
+
+### Setting Up Cursor
+
+Cursor can be configured through its extension system:
+
+1. Open Cursor and go to Settings > Extensions
+
+2. Add a new MCP connection with:
+   - Name: AI Collaboration MCP Server
+   - URL: http://localhost:3000/mcp
+   - Headers:
+     ```json
+     {
+       "x-license-key": "your-license-key"
+     }
+     ```
+   - Default role: frontend_dev (or your preferred role)
+
+3. Access MCP tools through Cursor's command palette (Ctrl+Shift+P or Cmd+Shift+P):
+   ```
+   MCP: List Available Tools
+   MCP: Invoke Tool
+   MCP: Get Tasks
+   ```
+
+### Setting Up Windsurf
+
+Windsurf connects via its plugin system:
+
+1. Create a configuration file:
+   ```bash
+   mkdir -p ~/.windsurf/plugins
+   touch ~/.windsurf/plugins/mcp-collaboration.json
+   ```
+
+2. Add the following configuration:
+   ```json
+   {
+     "name": "AI Collaboration MCP Server",
+     "type": "mcp",
+     "enabled": true,
+     "config": {
+       "url": "http://localhost:3000/mcp",
+       "headers": {
+         "x-license-key": "your-license-key"
+       },
+       "defaultRole": "architect",
+       "autoConnect": true
+     }
+   }
+   ```
+
+3. Restart Windsurf to load the plugin
+
+4. Access MCP functionality:
+   ```
+   /mcp list-tools
+   /mcp get-tasks
+   /mcp create-task
+   ```
+
+For more detailed setup instructions and troubleshooting, see our [AI Tool Integration Guide](ai-tool-integration.md).
 
 ## 💰 Pricing
 
@@ -145,40 +203,6 @@ Comprehensive documentation is available for all aspects of the MCP server:
 - [AI Tool Integration Guide](ai-tool-integration.md)
 - [API Reference](api-reference.md)
 - [License Management](license-management.md)
-
-## 👨‍💻 Example Usage
-
-Here's a simple example of how to use the MCP server:
-
-```javascript
-// Connect to the MCP server
-const transport = new HttpClientTransport({
-  url: 'http://localhost:3000/mcp',
-  headers: {
-    'x-license-key': 'your-license-key'
-  }
-});
-
-const client = new McpClient();
-await client.connect(transport);
-
-// Create a task for the AI team
-const result = await client.invoke('create-task', {
-  title: 'Build login page',
-  description: 'Create a React login page with email and password fields',
-  type: 'frontend',
-  priority: 'high',
-  assignee: 'cursor' // Assign to Cursor
-});
-
-// Send a message to Cursor
-await client.invoke('send-message', {
-  from: 'claude-code',
-  to: 'cursor',
-  message: 'Please focus on responsive design for the login page',
-  taskId: result.data.task.id
-});
-```
 
 ## 👨‍💻 Support
 
