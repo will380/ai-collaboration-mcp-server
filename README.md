@@ -19,7 +19,7 @@
 
 The AI Collaboration MCP Server is a powerful Model Context Protocol (MCP) server designed to enable seamless collaboration between different AI tools. It creates a virtual development team where each AI agent can contribute its unique strengths to your project.
 
-## ⚙ Features
+## ⚙️ Features
 
 - **Task Management System**: Create, assign, and track tasks between AI tools
 - **Role-Based Collaboration**: Assign specialized roles (frontend, backend, etc.) to different AI agents
@@ -28,7 +28,7 @@ The AI Collaboration MCP Server is a powerful Model Context Protocol (MCP) serve
 - **License Management**: Enterprise-grade licensing system with Stripe integration
 - **Secure Storage**: All data is securely stored with proper authentication
 
-## 🚀 Getting Started
+## 🔍 Getting Started
 
 ### Quick Start with NPX
 
@@ -70,38 +70,30 @@ npx ai-collaboration-mcp-server start
 npx ai-collaboration-mcp-server install
 ```
 
-## 🔧 AI Tool Setup
+## 🛠 AI Tool Setup
 
 ### Setting Up Claude Code
 
 Claude Code comes with built-in MCP support that makes integration straightforward:
 
-1. Open Claude Code in your terminal:
+1. Open a terminal and run the Claude Code CLI tool:
    ```bash
-   claude-code
+   claude mcp add
    ```
 
-2. Configure MCP connection:
-   ```bash
-   /mcp config
-   /mcp add-server
-   ```
-
-3. When prompted, enter:
+2. When prompted in the interactive wizard, enter:
    - Server name: "AI Collaboration MCP Server"
    - Server URL: http://localhost:3000/mcp (or your custom URL)
    - License key: Your license key
    - Role: backend_dev (or your preferred role)
 
-4. Connect to the server:
+3. Connect to the server and use MCP tools:
    ```bash
-   /mcp connect "AI Collaboration MCP Server"
-   ```
-
-5. Use MCP tools:
-   ```bash
-   /mcp list-tools
-   /mcp invoke create-task --title "Implement API" --description "Create REST API endpoint" --type "backend" --priority "high"
+   # List available tools
+   claude mcp list-tools
+   
+   # Invoke a tool
+   claude mcp invoke create-task --title "Implement API" --description "Create REST API endpoint" --type "backend" --priority "high"
    ```
 
 ### Setting Up Cursor
