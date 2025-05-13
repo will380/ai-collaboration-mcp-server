@@ -7,6 +7,7 @@
 <p align="center">
   <a href="#features">Features</a> •
   <a href="#getting-started">Getting Started</a> •
+  <a href="#ai-tool-setup">AI Tool Setup</a> •
   <a href="#pricing">Pricing</a> •
   <a href="#documentation">Documentation</a> •
   <a href="#support">Support</a>
@@ -69,6 +70,102 @@ npx ai-collaboration-mcp-server start
 npx ai-collaboration-mcp-server install
 ```
 
+## 🔧 AI Tool Setup
+
+### Setting Up Claude Code
+
+Claude Code comes with built-in MCP support that makes integration straightforward:
+
+1. Open Claude Code in your terminal:
+   ```bash
+   claude-code
+   ```
+
+2. Configure MCP connection:
+   ```bash
+   /mcp config
+   /mcp add-server
+   ```
+
+3. When prompted, enter:
+   - Server name: "AI Collaboration MCP Server"
+   - Server URL: http://localhost:3000/mcp (or your custom URL)
+   - License key: Your license key
+   - Role: backend_dev (or your preferred role)
+
+4. Connect to the server:
+   ```bash
+   /mcp connect "AI Collaboration MCP Server"
+   ```
+
+5. Use MCP tools:
+   ```bash
+   /mcp list-tools
+   /mcp invoke create-task --title "Implement API" --description "Create REST API endpoint" --type "backend" --priority "high"
+   ```
+
+### Setting Up Cursor
+
+Cursor can be configured through its extension system:
+
+1. Open Cursor and go to Settings > Extensions
+
+2. Add a new MCP connection with:
+   - Name: AI Collaboration MCP Server
+   - URL: http://localhost:3000/mcp
+   - Headers:
+     ```json
+     {
+       "x-license-key": "your-license-key"
+     }
+     ```
+   - Default role: frontend_dev (or your preferred role)
+
+3. Access MCP tools through Cursor's command palette (Ctrl+Shift+P or Cmd+Shift+P):
+   ```
+   MCP: List Available Tools
+   MCP: Invoke Tool
+   MCP: Get Tasks
+   ```
+
+### Setting Up Windsurf
+
+Windsurf connects via its plugin system:
+
+1. Create a configuration file:
+   ```bash
+   mkdir -p ~/.windsurf/plugins
+   touch ~/.windsurf/plugins/mcp-collaboration.json
+   ```
+
+2. Add the following configuration:
+   ```json
+   {
+     "name": "AI Collaboration MCP Server",
+     "type": "mcp",
+     "enabled": true,
+     "config": {
+       "url": "http://localhost:3000/mcp",
+       "headers": {
+         "x-license-key": "your-license-key"
+       },
+       "defaultRole": "architect",
+       "autoConnect": true
+     }
+   }
+   ```
+
+3. Restart Windsurf to load the plugin
+
+4. Access MCP functionality:
+   ```
+   /mcp list-tools
+   /mcp get-tasks
+   /mcp create-task
+   ```
+
+For more detailed setup instructions and troubleshooting, see our [AI Tool Integration Guide](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/ai-tool-integration.md).
+
 ## 💰 Pricing
 
 We offer flexible pricing options to suit teams of all sizes:
@@ -117,45 +214,9 @@ We offer flexible pricing options to suit teams of all sizes:
 Comprehensive documentation is available for all aspects of the MCP server:
 
 - [Installation Guide](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/installation.md)
-- [AI Tool Integration Guide](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/ai-tool-integration.md) - **New!** Setup instructions for Claude Code, Cursor, and Windsurf
+- [AI Tool Integration Guide](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/ai-tool-integration.md)
 - [API Reference](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/api-reference.md)
 - [License Management](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/license-management.md)
-
-## 👨‍💻 Example Usage
-
-Here's a simple example of how to use the MCP server with Claude Code:
-
-```javascript
-// Connect to the MCP server
-const transport = new HttpClientTransport({
-  url: 'http://localhost:3000/mcp',
-  headers: {
-    'x-license-key': 'your-license-key'
-  }
-});
-
-const client = new McpClient();
-await client.connect(transport);
-
-// Create a task for the AI team
-const result = await client.invoke('create-task', {
-  title: 'Build login page',
-  description: 'Create a React login page with email and password fields',
-  type: 'frontend',
-  priority: 'high',
-  assignee: 'cursor' // Assign to Cursor
-});
-
-// Send a message to Cursor
-await client.invoke('send-message', {
-  from: 'claude-code',
-  to: 'cursor',
-  message: 'Please focus on responsive design for the login page',
-  taskId: result.data.task.id
-});
-```
-
-For specific setup instructions for each AI tool (Claude Code, Cursor, Windsurf), see our [AI Tool Integration Guide](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/ai-tool-integration.md).
 
 ## 👨‍💻 Support
 
