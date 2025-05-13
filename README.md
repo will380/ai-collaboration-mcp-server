@@ -50,20 +50,23 @@ npx ai-collaboration-mcp-server buy
 npx ai-collaboration-mcp-server start
 ```
 
-### Manual Installation
-
-1. Clone the repository (this is a public demo repository - subscribers get private repo access)
-2. Install dependencies:
+### Available Commands
 
 ```bash
-npm install
-```
+# Setup your server configuration
+npx ai-collaboration-mcp-server setup
 
-3. Create a `.env` file with your server configuration and license key
-4. Run the server:
+# Purchase a license
+npx ai-collaboration-mcp-server buy
 
-```bash
-npm start
+# Check your license status
+npx ai-collaboration-mcp-server status
+
+# Start the MCP server
+npx ai-collaboration-mcp-server start
+
+# Install dependencies
+npx ai-collaboration-mcp-server install
 ```
 
 ## 💰 Pricing
@@ -113,13 +116,9 @@ We offer flexible pricing options to suit teams of all sizes:
 
 Comprehensive documentation is available for all aspects of the MCP server:
 
-- [Installation Guide](docs/installation.md)
-- [Configuration](docs/configuration.md)
-- [API Reference](docs/api-reference.md)
-- [Task Management](docs/task-management.md)
-- [Role-Based Access](docs/role-based-access.md)
-- [Conflict Resolution](docs/conflict-resolution.md)
-- [License Management](docs/license-management.md)
+- [Installation Guide](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/installation.md)
+- [API Reference](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/api-reference.md)
+- [License Management](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/license-management.md)
 
 ## 👨‍💻 Example Usage
 
@@ -159,14 +158,13 @@ await client.invoke('send-message', {
 
 We're here to help you get the most out of your AI collaboration:
 
-- [Documentation](docs/)
-- [FAQ](docs/faq.md) 
+- [Documentation](https://github.com/will380/ai-collaboration-mcp-server/tree/main/docs)
 - [Email Support](mailto:support@example.com)
 - [Discord Community](https://discord.gg/example)
 
 ## 📄 License
 
-This repository contains documentation and examples for the AI Collaboration MCP Server. The actual server code is provided to customers upon purchase of a license. All usage is subject to our [Terms of Service](docs/terms.md).
+This package is provided to customers upon purchase of a license. All usage is subject to our [Terms of Service](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/terms.md).
 
 ---
 
