@@ -14,18 +14,18 @@
 
 ---
 
-## 🤖 Supercharge Your AI Development Team
+## 🚀 Supercharge Your AI Development Team
 
 The AI Collaboration MCP Server is a powerful Model Context Protocol (MCP) server designed to enable seamless collaboration between different AI tools. It creates a virtual development team where each AI agent can contribute its unique strengths to your project.
 
-## ✨ Features
+## ⚙ Features
 
 - **Task Management System**: Create, assign, and track tasks between AI tools
 - **Role-Based Collaboration**: Assign specialized roles (frontend, backend, etc.) to different AI agents
 - **Conflict Resolution**: Sophisticated system to prevent AI tools from stepping on each other's toes
 - **Message Exchange**: Enable direct communication between AI agents for better coordination
 - **License Management**: Enterprise-grade licensing system with Stripe integration
-- **Secure Storage**: All data is securely stored in Supabase with proper authentication
+- **Secure Storage**: All data is securely stored with proper authentication
 
 ## 🚀 Getting Started
 
@@ -34,14 +34,17 @@ The AI Collaboration MCP Server is a powerful Model Context Protocol (MCP) serve
 The fastest way to get started is with our NPX command:
 
 ```bash
-# Install and run in trial mode
-npx ai-collaboration-mcp-server install
+# Install globally
+npm install -g ai-collaboration-mcp-server
+
+# Or use directly with npx
+npx ai-collaboration-mcp-server
+
+# Setup with your configuration
+npx ai-collaboration-mcp-server setup
 
 # Buy a license
 npx ai-collaboration-mcp-server buy
-
-# Setup with your license key
-npx ai-collaboration-mcp-server setup
 
 # Start the server
 npx ai-collaboration-mcp-server start
@@ -56,7 +59,7 @@ npx ai-collaboration-mcp-server start
 npm install
 ```
 
-3. Create a `.env` file with your license key and Supabase credentials
+3. Create a `.env` file with your server configuration and license key
 4. Run the server:
 
 ```bash
@@ -118,7 +121,7 @@ Comprehensive documentation is available for all aspects of the MCP server:
 - [Conflict Resolution](docs/conflict-resolution.md)
 - [License Management](docs/license-management.md)
 
-## 🛠️ Example Usage
+## 👨‍💻 Example Usage
 
 Here's a simple example of how to use the MCP server with Claude Code:
 
