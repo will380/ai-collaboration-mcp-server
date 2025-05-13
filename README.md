@@ -76,28 +76,11 @@ npx ai-collaboration-mcp-server install
 
 Claude Code comes with built-in MCP support that makes integration straightforward:
 
+Buy your license at : [https://acmcpserver.netlify.app/#pricing]
+
 1. Open a terminal and run the Claude Code CLI tool:
    ```bash
    claude mcp add npx -y ai-collaboration-mcp-server start
-   ```
-
-### Setting Up GitHub MCP Tool
-
-GitHub MCP tool can be configured by adding to your .mcp.json configuration file:
-
-1. Create or edit your .mcp.json file in your project root:
-   ```bash
-   touch .mcp.json
-   ```
-
-2. Add the following configuration:
-   ```json
-   {
-     "ai-collaboration-server": {
-       "command": "npx",
-       "args": ["-y", "ai-collaboration-mcp-server start"]
-     }
-   }
    ```
 
 ### Setting Up Cursor
