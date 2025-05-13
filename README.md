@@ -78,82 +78,7 @@ Claude Code comes with built-in MCP support that makes integration straightforwa
 
 1. Open a terminal and run the Claude Code CLI tool:
    ```bash
-   claude mcp add
-   ```
-
-2. When prompted in the interactive wizard, enter:
-   - Server name: "AI Collaboration MCP Server"
-   - Server URL: http://localhost:3000/mcp (or your custom URL)
-   - License key: Your license key
-   - Role: backend_dev (or your preferred role)
-
-3. Connect to the server and use MCP tools:
-   ```bash
-   # List available tools
-   claude mcp list-tools
-   
-   # Invoke a tool
-   claude mcp invoke create-task --title "Implement API" --description "Create REST API endpoint" --type "backend" --priority "high"
-   ```
-
-### Setting Up Cursor
-
-Cursor can be configured through its extension system:
-
-1. Open Cursor and go to Settings > Extensions
-
-2. Add a new MCP connection with:
-   - Name: AI Collaboration MCP Server
-   - URL: http://localhost:3000/mcp
-   - Headers:
-     ```json
-     {
-       "x-license-key": "your-license-key"
-     }
-     ```
-   - Default role: frontend_dev (or your preferred role)
-
-3. Access MCP tools through Cursor's command palette (Ctrl+Shift+P or Cmd+Shift+P):
-   ```
-   MCP: List Available Tools
-   MCP: Invoke Tool
-   MCP: Get Tasks
-   ```
-
-### Setting Up Windsurf
-
-Windsurf connects via its plugin system:
-
-1. Create a configuration file:
-   ```bash
-   mkdir -p ~/.windsurf/plugins
-   touch ~/.windsurf/plugins/mcp-collaboration.json
-   ```
-
-2. Add the following configuration:
-   ```json
-   {
-     "name": "AI Collaboration MCP Server",
-     "type": "mcp",
-     "enabled": true,
-     "config": {
-       "url": "http://localhost:3000/mcp",
-       "headers": {
-         "x-license-key": "your-license-key"
-       },
-       "defaultRole": "architect",
-       "autoConnect": true
-     }
-   }
-   ```
-
-3. Restart Windsurf to load the plugin
-
-4. Access MCP functionality:
-   ```
-   /mcp list-tools
-   /mcp get-tasks
-   /mcp create-task
+   claude mcp add npx -y ai-collaboration-mcp-server start
    ```
 
 ### Setting Up GitHub MCP Tool
@@ -175,9 +100,55 @@ GitHub MCP tool can be configured by adding to your .mcp.json configuration file
    }
    ```
 
-3. This configuration will allow GitHub MCP tools to automatically start and connect to your AI Collaboration MCP server
+### Setting Up Cursor
 
-4. Access GitHub MCP functionality through your GitHub workflow
+Cursor can be configured through its config system:
+
+1. Create or edit your .mcp.json file in your project root:
+   ```bash
+   touch .mcp.json
+   ```
+
+2. Add the following configuration:
+   ```json
+   {
+     "ai-collaboration-server": {
+       "command": "npx",
+       "args": ["-y", "ai-collaboration-mcp-server start"]
+     }
+   }
+   ```
+
+3. Access MCP tools through Cursor's command palette (Ctrl+Shift+P or Cmd+Shift+P):
+   ```
+   MCP: List Available Tools
+   MCP: Invoke Tool
+   MCP: Get Tasks
+   ```
+
+### Setting Up Windsurf:
+
+1. Create or edit your .mcp.json file in your project root:
+   ```bash
+   touch .mcp.json
+   ```
+
+2. Add the following configuration:
+   ```json
+   {
+     "ai-collaboration-server": {
+       "command": "npx",
+       "args": ["-y", "ai-collaboration-mcp-server start"]
+     }
+   }
+   ```
+
+3. Access MCP functionality:
+   ```
+   /mcp list-tools
+   /mcp get-tasks
+   /mcp create-task
+   ```
 
 For more detailed setup instructions and troubleshooting, see our [AI Tool Integration Guide](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/ai-tool-integration.md).
 
@@ -238,8 +209,8 @@ Comprehensive documentation is available for all aspects of the MCP server:
 We're here to help you get the most out of your AI collaboration:
 
 - [Documentation](https://github.com/will380/ai-collaboration-mcp-server/tree/main/docs)
-- [Email Support](mailto:support@example.com)
-- [Discord Community](https://discord.gg/example)
+- [Email Support](mailto:will.martin380@gmail.com)
+- [License Website](https://acmcpserver.netlify.app/#pricing)
 
 ## 📄 License
 
