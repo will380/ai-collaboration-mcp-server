@@ -16,7 +16,7 @@
 ---
 
 <p align="center">
-  https://github.com/user-attachments/assets/aada7400-76e4-47c6-b282-853d5b1dc6b0
+  [https://github.com/user-attachments/assets/aada7400-76e4-47c6-b282-853d5b1dc6b0](https://github.com/will380/ai-collaboration-mcp-server/blob/main/ai-collaboration-server_ad_EDITED25.mp4)
 </p>
 
 ## 🚀 Supercharge Your AI Development Team
