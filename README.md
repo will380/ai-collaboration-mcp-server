@@ -201,6 +201,7 @@ We're here to help you get the most out of your AI collaboration:
 ## 📄 License
 
 This package is provided to customers upon purchase of a license. All usage is subject to our [Terms of Service](https://github.com/will380/ai-collaboration-mcp-server/blob/main/docs/terms.md).
+Google search : <meta name="google-site-verification" content="mn1_mEy_LW_0munMNwLG_O0ypJaCzQltqx8kXx05JwY" />
 
 ---
 
