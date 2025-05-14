@@ -16,7 +16,7 @@
 ---
 
 <p align="center">
-  <a>(https://www.dropbox.com/scl/fi/vp60q0dbw27nb8hsj4qvj/ai-collaboration-server_ad_EDITED.mp4?rlkey=p9020700qlcedrnh4w4h602hw&st=immbllqr&dl=0)</a>
+  [(https://www.dropbox.com/home?preview=ai-collaboration-server_ad_EDITED.mp4](https://github.com/user-attachments/assets/aada7400-76e4-47c6-b282-853d5b1dc6b0)]
 
 ## 🚀 Supercharge Your AI Development Team
 
