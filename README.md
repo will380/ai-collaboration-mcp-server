@@ -16,7 +16,7 @@
 ---
 
 <p align="center">
-  [https://github.com/user-attachments/assets/aada7400-76e4-47c6-b282-853d5b1dc6b0](https://github.com/will380/ai-collaboration-mcp-server/blob/main/ai-collaboration-server_ad_EDITED25.mp4)
+  [[https://github.com/user-attachments/assets/aada7400-76e4-47c6-b282-853d5b1dc6b0](https://github.com/will380/ai-collaboration-mcp-server/blob/main/ai-collaboration-server_ad_EDITED25.mp4)](https://github-production-user-asset-6210df.s3.amazonaws.com/8949412/443436603-aada7400-76e4-47c6-b282-853d5b1dc6b0.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250514T002224Z&X-Amz-Expires=300&X-Amz-Signature=2186cfe34cdd5283c4c46cefe3bec000b86f2c34694e6affb0854dd715b6bfac&X-Amz-SignedHeaders=host)
 </p>
 
 ## 🚀 Supercharge Your AI Development Team
