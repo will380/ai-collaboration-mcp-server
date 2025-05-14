@@ -1,3 +1,5 @@
+
+<b><img width=50 height=50 src="https://github.com/user-attachments/assets/1798bae5-a6ee-4855-8f47-6ce9ff808294"></b>
 # AI Collaboration MCP Server
 
 <p align="center">
