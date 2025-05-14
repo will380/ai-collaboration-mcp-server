@@ -15,6 +15,9 @@
 
 ---
 
+<p align="center">
+  <a>(https://www.dropbox.com/scl/fi/vp60q0dbw27nb8hsj4qvj/ai-collaboration-server_ad_EDITED.mp4?rlkey=p9020700qlcedrnh4w4h602hw&st=immbllqr&dl=0)</a>
+
 ## 🚀 Supercharge Your AI Development Team
 
 The AI Collaboration MCP Server is a powerful Model Context Protocol (MCP) server designed to enable seamless collaboration between different AI tools. It creates a virtual development team where each AI agent can contribute its unique strengths to your project.
