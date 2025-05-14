@@ -16,7 +16,7 @@
 ---
 
 <p align="center">
-  https://github.com/user-attachments/assets/aada7400-76e4-47c6-b282-853d5b1dc6b0
+  [https://github.com/user-attachments/assets/aada7400-76e4-47c6-b282-853d5b1dc6b0](https://github.com/user-attachments/assets/aada7400-76e4-47c6-b282-853d5b1dc6b0)
 
 ## 🚀 Supercharge Your AI Development Team
 
