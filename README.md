@@ -207,4 +207,3 @@ This package is provided to customers upon purchase of a license. All usage is s
 <p align="center">
   <small>© 2025 AI Collaboration MCP Server. All rights reserved.</small>
 </p>
-google-site-verification: googlec7b2913d929ec777.html
