@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Collaboration MCP Server | Get Your License</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary-color: #4F46E5;
+      --secondary-color: #8B5CF6;
+      --dark-color: #1F2937;
+      --light-color: #F9FAFB;
+      --success-color: #10B981;
+      --warning-color: #F59E0B;
+      --danger-color: #EF4444;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--dark-color);
+      background-color: var(--light-color);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 80px 0 120px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: var(--light-color);
+      clip-path: polygon(0 100%, 100% 100%, 100% 0);
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+    
+    .subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: white;
+      color: var(--primary-color);
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .features {
+      padding: 80px 0;
+      background-color: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 60px;
+      color: var(--dark-color);
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    
+    .feature-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(79, 70, 229, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: var(--primary-color);
+      font-size: 24px;
+    }
+    
+    .feature-title {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+      color: var(--dark-color);
+    }
+    
+    .feature-description {
+      color: #6B7280;
+      font-size: 1rem;
+    }
+    
+    .pricing {
+      padding: 80px 0;
+      background-color: var(--light-color);
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .price-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 40px 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .price-card.popular {
+      border: 2px solid var(--primary-color);
+      transform: scale(1.05);
+    }
+    
+    .price-card.popular:hover {
+      transform: scale(1.05) translateY(-5px);
+    }
+    
+    .popular-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--primary-color);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .price-title {
+      font-size: 1.5rem;
+      color: var(--dark-color);
+      margin-bottom: 20px;
+    }
+    
+    .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--dark-color);
+      margin-bottom: 20px;
+    }
+    
+    .price-period {
+      font-size: 1rem;
+      color: #6B7280;
+    }
+    
+    .price-features {
+      list-style: none;
+      margin: 30px 0;
+      text-align: left;
+    }
+    
+    .price-features li {
+      padding: 8px 0;
+      color: #6B7280;
+    }
+    
+    .price-features li::before {
+      content: "✓";
+      color: var(--success-color);
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    
+    .buy-button {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .buy-button:hover {
+      background-color: var(--secondary-color);
+    }
+    
+    .faq {
+      padding: 80px 0;
+      background-color: white;
+    }
+    
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      margin-bottom: 30px;
+    }
+    
+    .faq-question {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--dark-color);
+      margin-bottom: 15px;
+    }
+    
+    .faq-answer {
+      color: #6B7280;
+      font-size: 1rem;
+    }
+    
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links li {
+      margin: 0 15px;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      opacity: 1;
+    }
+    
+    .copyright {
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .feature-grid, .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .price-card.popular {
+        transform: scale(1);
+      }
+      
+      .price-card.popular:hover {
+        transform: translateY(-5px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>AI Collaboration MCP Server</h1>
+      <p class="subtitle">Empower your development workflow with advanced AI collaboration tools. Connect Claude, Cursor, and Windsurf to work together seamlessly.</p>
+      <a href="#pricing" class="cta-button">Get Your License</a>
+    </div>
+  </header>
+  
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Key Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3 class="feature-title">Multi-AI Collaboration</h3>
+          <p class="feature-description">Connect multiple AI assistants to work together on complex development tasks.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3 class="feature-title">Task Distribution</h3>
+          <p class="feature-description">Automatically assign tasks to the most suitable AI based on specialization and capabilities.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3 class="feature-title">Conflict Resolution</h3>
+          <p class="feature-description">Smart handling of potential conflicts when multiple AIs work on the same codebase.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3 class="feature-title">Project Management</h3>
+          <p class="feature-description">Track project status, dependencies, and progress with integrated tools.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">Easy Integration</h3>
+          <p class="feature-description">Simple setup with npx commands and straight-forward configuration.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔌</div>
+          <h3 class="feature-title">Extensible Tools</h3>
+          <p class="feature-description">Develop custom tools and extend functionality to suit your workflow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Choose Your Plan</h2>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3 class="price-title">Monthly</h3>
+          <div class="price">$9.99<span class="price-period">/month</span></div>
+          <ul class="price-features">
+            <li>Full MCP Server access</li>
+            <li>All collaboration features</li>
+            <li>Regular updates</li>
+            <li>Community support</li>
+          </ul>
+          <button class="buy-button" onclick="startCheckout('monthly')">Choose Monthly</button>
+        </div>
+        <div class="price-card popular">
+          <span class="popular-tag">Most Popular</span>
+          <h3 class="price-title">Annual</h3>
+          <div class="price">$79.99<span class="price-period">/year</span></div>
+          <ul class="price-features">
+            <li>Everything in Monthly</li>
+            <li>33% savings vs monthly</li>
+            <li>Priority support</li>
+            <li>Early access to new features</li>
+          </ul>
+          <button class="buy-button" onclick="startCheckout('annual')">Choose Annual</button>
+        </div>
+        <div class="price-card">
+          <h3 class="price-title">Lifetime</h3>
+          <div class="price">$199.99</div>
+          <ul class="price-features">
+            <li>Everything in Annual</li>
+            <li>One-time payment</li>
+            <li>Lifetime updates</li>
+            <li>Premium support</li>
+          </ul>
+          <button class="buy-button" onclick="startCheckout('lifetime')">Choose Lifetime</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <h3 class="faq-question">What is the MCP Server?</h3>
+          <p class="faq-answer">The Model Context Protocol (MCP) Server is a powerful tool that enables collaboration between different AI assistants like Claude, Cursor, and Windsurf, allowing them to work together on software development projects.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">How do I install and set up the MCP Server?</h3>
+          <p class="faq-answer">Installation is simple with our npm package. After purchasing a license, just run <code>npx ai-collaboration-mcp-server buy</code> and follow the prompts to enter your license key and configure the server.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can I upgrade my plan later?</h3>
+          <p class="faq-answer">Yes, you can upgrade from a monthly to an annual or lifetime license at any time. Contact our support team with your current license key for assistance with upgrades.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Do you offer refunds?</h3>
+          <p class="faq-answer">We offer a 14-day money-back guarantee if you're not satisfied with your purchase. Contact our support team within 14 days of purchase to request a refund.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">What kind of support is provided?</h3>
+          <p class="faq-answer">All licenses include access to our community support forums. Annual and Lifetime licenses include priority email support with faster response times.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="mailto:support@acmcpserver.com">Support</a></li>
+      </ul>
+      <p class="copyright">&copy; 2025 AI Collaboration MCP Server. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    async function startCheckout(planId) {
+      try {
+        // Show loading state
+        const button = event.target;
+        const originalText = button.textContent;
+        button.textContent = 'Loading...';
+        button.disabled = true;
+        
+        // Call the create-checkout endpoint
+        const response = await fetch('/.netlify/functions/create-checkout', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ planId }),
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.url) {
+          // Redirect to the Stripe checkout page
+          window.location.href = result.url;
+        } else {
+          throw new Error(result.error || 'Failed to create checkout session');
+        }
+      } catch (error) {
+        // Reset button state
+        button.textContent = originalText;
+        button.disabled = false;
+        
+        // Show error message
+        alert('Error creating checkout: ' + error.message);
+        console.error('Checkout error:', error);
+      }
+    }
+  </script>
+</body>
+</html>
